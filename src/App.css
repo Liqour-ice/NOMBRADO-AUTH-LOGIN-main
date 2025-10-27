@@ -1,0 +1,254 @@
+/* Minimalist Design Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: #1a1a1a;
+}
+
+/* Remove all default margins and padding */
+.App {
+  min-height: 100vh;
+}
+
+/* Custom focus styles */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+button, input {
+  transition: all 0.3s ease;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Centering container and login-card styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* wrapper to center the "frame" */
+.center-wrap{
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* big rounded container look */
+.frame{
+  width:100%;
+  max-width:1200px;
+  background:transparent;
+  padding:40px 20px;
+  position:relative;
+  overflow:visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* title */
+.title{
+  text-align:center;
+  margin:0 0 24px;
+  font-weight:600;
+  color:#444;
+}
+
+/* cards layout */
+.cards{
+  display:flex;
+  gap:36px;
+  align-items:flex-start;
+  justify-content:center;
+  z-index:1;
+  position:relative;
+  padding-bottom:8px;
+  flex-wrap:wrap;   /* allow wrapping on smaller screens */
+  flex-direction:row; /* ensure row on desktop */
+}
+
+/* If you still need a single-card mode keep this, otherwise remove */
+.cards.single { justify-content:center; gap:0; }
+
+/* card */
+.card{
+  background:#ffffff;
+  width:320px;
+  padding:32px;
+  border-radius:16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card-signup{ 
+  width:360px;
+}
+
+/* header inside card */
+.card-header{ text-align:center; margin-bottom:14px; }
+.card-header .icon{ display:inline-block; background:rgba(59,87,255,0.08); color:#3b57ff; padding:10px; border-radius:50%; font-size:18px; margin-bottom:8px; }
+.card-header h2{ margin:6px 0 4px; font-size:18px }
+.muted{ color:#9aa0a6 }
+.small{ font-size:12px }
+.center{ text-align:center }
+
+/* form fields */
+.field{ display:block; margin:10px 0; }
+.field input{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #eee;
+  border-radius:6px;
+  background:transparent;
+  outline:none;
+  font-size:14px;
+  box-shadow:inset 0 1px 0 rgba(0,0,0,0.02);
+}
+.row.between{ display:flex; align-items:center; justify-content:space-between }
+
+/* buttons */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  border-radius:8px;
+  border:0;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.primary{
+  background:#3b57ff;
+  color:#fff;
+  box-shadow: 0 8px 20px rgba(59,87,255,0.18);
+}
+
+/* social icons */
+.socials{ display:flex; gap:8px; margin-top:10px; justify-content:center; }
+.icon-btn{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid #eee;
+  background:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  padding:0;
+  box-shadow:none;
+  margin:0 4px;
+}
+.icon-btn svg{ 
+  width:18px; 
+  height:18px; 
+  display:block; 
+}
+.icon-btn.github{ 
+  color:#222; 
+} 
+.icon-btn.google{ 
+  background: #fff;
+}
+/* small hover effect */
+.icon-btn:hover{ box-shadow: 0 6px 14px rgba(59,87,255,0.06); transform: translateY(-1px); }
+
+/* footer inside frame */
+footer{ margin-top:20px; color:#9aa0a6 }
+
+/* responsive */
+@media (max-width:780px){
+  .cards{ flex-direction:column; align-items:center; gap:18px; }
+  .frame{ padding:28px 20px }
+  .card{ width:92% }
+}
+
+/* top tabs for selecting which window to show */
+.frame-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px; }
+.view-tabs{ display:flex; gap:8px; align-items:center; }
+.tab{
+  background:transparent;
+  border:1px solid transparent;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.tab.active{
+  background:linear-gradient(180deg,#fff,#f1f6ff);
+  border-color: rgba(59,87,255,0.14);
+  color:var(--accent,#3b57ff);
+  box-shadow: 0 6px 18px rgba(59,87,255,0.08);
+}
+.tab.small-link{
+  font-weight:500;
+  font-size:13px;
+  color:var(--muted,#9aa0a6);
+  border-radius:6px;
+}
+
+/* single-mode: hide one card and center the other */
+.cards.show-login-only .card-signup,
+.cards.show-signup-only .card-login {
+  display: none;
+}
+.cards.single-mode,
+.cards.show-login-only.single-mode,
+.cards.show-signup-only.single-mode {
+  justify-content: center;
+}
+.cards.single-mode .card,
+.cards.show-login-only.single-mode .card,
+.cards.show-signup-only.single-mode .card {
+  width:420px;
+  max-width:92%;
+  transition: all 220ms ease;
+}
+
+/* accessibility: hide from assistive tech when not visible */
+.card[aria-hidden="true"]{ display:none }
+
+/* responsive */
+@media (max-width:780px){
+  .cards{ 
+    flex-direction:column; 
+    align-items:center; 
+    gap:18px; 
+  }
+  .frame{ 
+    padding:28px 20px;
+  }
+  .card{ 
+    width:92%;
+  }
+}
